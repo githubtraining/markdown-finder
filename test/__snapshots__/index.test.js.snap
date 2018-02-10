@@ -8,10 +8,40 @@ Object {
 }
 `;
 
-exports[`MarkdownFinder get link returns true if the markdown contains an link 1`] = `
+exports[`MarkdownFinder get images returns an array of images 1`] = `
+Array [
+  Object {
+    "match": "![img](example.com/image.png)",
+    "text": "img",
+    "url": "example.com/image.png",
+  },
+  Object {
+    "match": "![img](example.com/photo.png)",
+    "text": "img",
+    "url": "example.com/photo.png",
+  },
+]
+`;
+
+exports[`MarkdownFinder get link returns a link 1`] = `
 Object {
   "match": "[link](example.com)",
   "text": "link",
   "url": "example.com",
 }
+`;
+
+exports[`MarkdownFinder get links returns an array of links 1`] = `
+Array [
+  Object {
+    "match": "[link](example.com)",
+    "text": "link",
+    "url": "example.com",
+  },
+  Object {
+    "match": "[this](this.com)",
+    "text": "this",
+    "url": "this.com",
+  },
+]
 `;
