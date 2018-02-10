@@ -44,9 +44,21 @@ describe('MarkdownFinder', () => {
         expect(finder(md).get.image()).toMatchSnapshot()
       })
 
-      it('returns null if it does not exist', () => {
+      it('returns false if it does not exist', () => {
         const md = 'This is not an image'
-        expect(finder(md).get.image()).toBe(null)
+        expect(finder(md).get.image()).toBe(false)
+      })
+    })
+
+    describe('link', () => {
+      it('returns true if the markdown contains an link', () => {
+        const md = 'This is a link [link](example.com)'
+        expect(finder(md).get.link()).toMatchSnapshot()
+      })
+
+      it('returns false if the markdown does not contain a link', () => {
+        const md = 'This is not an link'
+        expect(finder(md).get.link()).toBe(false)
       })
     })
   })
