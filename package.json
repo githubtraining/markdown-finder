@@ -1,0 +1,23 @@
+{
+  "name": "markdown-finder",
+  "version": "0.0.1",
+  "description": "Finds things in markdown.",
+  "main": "lib/index.js",
+  "repository": "https://github.com/JasonEtco/markdown-finder.git",
+  "scripts": {
+    "test": "jest --coverage && standard",
+    "test:update": "jest -u"
+  },
+  "keywords": [],
+  "author": "Jason Etcovitch <jasonetco@gmail.com> (https://github.com/jasonetco)",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.0.4",
+    "standard": "^10.0.3"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  }
+}

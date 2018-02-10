@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarkdownFinder get image returns the image if it exists 1`] = `
+Array [
+  "![img](example.com/image.png)",
+  "img",
+  "example.com/image.png",
+  undefined,
+]
+`;
