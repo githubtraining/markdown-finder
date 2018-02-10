@@ -25,8 +25,8 @@ const finder = require('markdown-finder')
 
 // Does the markdown string have at least one link?
 const link = finder(myMarkdown).get.link()
-// [full match, text content, URL]
-console.log(`I found a link! It goes to ${link[2]}!`)
+// { match, text, url }
+console.log(`I found a link! It goes to ${link.url}!`)
 ```
 
 ## API
@@ -45,5 +45,5 @@ Each method takes a callback argument. This is where you can run your own valida
 ```js
 const markdown = 'Check out [my website](https://my-website.com)!'
 const link = finder(markdown)
-// link: ['[my website](https://my-website.com)', 'my website', 'https://my-website.com']
+// link: { match: '[my website](https://my-website.com)', text: 'my website', url: 'https://my-website.com' }
 ```
