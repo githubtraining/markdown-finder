@@ -33,10 +33,12 @@ console.log(`I found a link! It goes to ${link.url}!`)
 
 There are two tracks: `finder().has` and `finder().get`. The former will always return a boolean, and the latter will always return the matched string(s) if they exist (or null if they do not). The two have the same methods, so there is only one set of methods.
 
-| Method | Description |
-| ------ | ----------- |
-| `image` | Matches markdown images |
-| `link` | Matches markdown links. **Note**: it will not match images. |
+| Method | Description | Get returns |
+| ------ | ----------- | ------- |
+| `image` | Matches markdown images | `{ match, text, url }`
+| `link` | Matches markdown links. **Note**: it will not match images. | `{ match, text, url }` |
+| `images` | Returns an array of images | `[{ match, text, url }]` |
+| `links` | Returns an array of links | `[{ match, text, url }]` |
 
 ### Using callback validators
 
