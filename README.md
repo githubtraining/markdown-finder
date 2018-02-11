@@ -36,8 +36,8 @@ There are two tracks: `finder().has` and `finder().get`. The former will always 
 | Method | Description | Get returns |
 | ------ | ----------- | ------- |
 | `image` | Matches markdown images | `{ match, text, url }`
-| `link` | Matches markdown links. **Note**: it will not match images. | `{ match, text, url }` |
 | `images` | Returns an array of images | `[{ match, text, url }]` |
+| `link` | Matches markdown links. **Note**: it will not match images. | `{ match, text, url }` |
 | `links` | Returns an array of links | `[{ match, text, url }]` |
 
 ### Using callback validators
