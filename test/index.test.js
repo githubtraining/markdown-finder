@@ -43,4 +43,16 @@ describe('MarkdownFinder', () => {
       expect(finder(md).bolds()).toEqual([])
     })
   })
+
+  describe('italics', () => {
+    it('returns an array of italic text', () => {
+      const md = '*this is some italic* and so is *this*'
+      expect(finder(md).italics()).toMatchSnapshot()
+    })
+
+    it('returns an empty array if the markdown does not contain any italic text', () => {
+      const md = 'This is has no italic text'
+      expect(finder(md).italics()).toEqual([])
+    })
+  })
 })

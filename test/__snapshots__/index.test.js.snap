@@ -28,6 +28,19 @@ Array [
 ]
 `;
 
+exports[`MarkdownFinder italics returns an array of italic text 1`] = `
+Array [
+  Object {
+    "match": "*this is some italic*",
+    "text": "this is some italic",
+  },
+  Object {
+    "match": "*this*",
+    "text": "this",
+  },
+]
+`;
+
 exports[`MarkdownFinder links returns an array of links 1`] = `
 Array [
   Object {
