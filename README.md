@@ -8,12 +8,14 @@ This library can be used to validate markdown against custom functions.
 const finder = require('markdown-finder')
 
 // Does the markdown string have at least one link?
-if (finder(myMarkdown).has.links()) {
+const links = finder(myMarkdown).links()
+if (links.length > 0) {
   console.log('I found a link!')
 }
 
 // Is there a link to GitHub?
-if (finder(myMarkdown).has.links(links => links.some(link => link.url === 'https://github.com'))) {
+const links = finder(myMarkdown).links(links => links.filter(link => link.url === 'https://github.com'))
+if (links.length > 0) {
   console.log('I found a link to GitHub!')
 }
 ```
@@ -23,15 +25,12 @@ In this basic example, if you needed to actually get the link itself, you could 
 ```js
 const finder = require('markdown-finder')
 
-// Does the markdown string have at least one link?
-const link = finder(myMarkdown).get.links()
-// { match, text, url }
-console.log(`I found a link! It goes to ${link.url}!`)
+const links = finder(myMarkdown).links()
+// links: [{ match, text, url }]
+console.log(`I found a link! It goes to ${links[0].url}!`)
 ```
 
 ## API
-
-There are two tracks: `finder().has` and `finder().get`. The former will always return a boolean, and the latter will always return the matched string(s) if they exist (or null if they do not). The two have the same methods, so there is only one set of methods.
 
 | Method | Description | Get returns |
 | ------ | ----------- | ------- |
@@ -40,10 +39,10 @@ There are two tracks: `finder().has` and `finder().get`. The former will always 
 
 ### Using callback validators
 
-Each method takes a callback argument. This is where you can run your own validation against whatever was matched. The callback will get a RegEx match argument, whose shape depends on type of thing being matched. For example, a `link` will look like:
+Each method takes a callback argument. This is where you can run your own validation against whatever was matched. The callback will get an array of objects argument for the matches; the shape of those objects depends on the type of thing being matched. For example, a `link` will look like:
 
 ```js
 const markdown = 'Check out [my website](https://my-website.com)!'
-const links = finder(markdown).get.links()
+const links = finder(markdown).links()
 // links: [{ match: '[my website](https://my-website.com)', text: 'my website', url: 'https://my-website.com' }]
 ```
