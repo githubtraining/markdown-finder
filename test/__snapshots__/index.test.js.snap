@@ -9,7 +9,7 @@ Array [
   Object {
     "match": "**this**",
     "text": "this",
-  }
+  },
 ]
 `;
 
