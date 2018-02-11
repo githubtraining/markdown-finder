@@ -1,13 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MarkdownFinder get image returns the image if it exists 1`] = `
-Object {
-  "match": "![img](example.com/image.png)",
-  "text": "img",
-  "url": "example.com/image.png",
-}
-`;
-
 exports[`MarkdownFinder get images returns an array of images 1`] = `
 Array [
   Object {
@@ -21,14 +13,6 @@ Array [
     "url": "example.com/photo.png",
   },
 ]
-`;
-
-exports[`MarkdownFinder get link returns a link 1`] = `
-Object {
-  "match": "[link](example.com)",
-  "text": "link",
-  "url": "example.com",
-}
 `;
 
 exports[`MarkdownFinder get links returns an array of links 1`] = `

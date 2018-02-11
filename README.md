@@ -8,12 +8,12 @@ This library can be used to validate markdown against custom functions.
 const finder = require('markdown-finder')
 
 // Does the markdown string have at least one link?
-if (finder(myMarkdown).has.link()) {
+if (finder(myMarkdown).has.links()) {
   console.log('I found a link!')
 }
 
 // Is there a link to GitHub?
-if (finder(myMarkdown).has.link(link => link.includes('github.com'))) {
+if (finder(myMarkdown).has.links(links => links.some(link => link.url === 'https://github.com'))) {
   console.log('I found a link to GitHub!')
 }
 ```
@@ -24,7 +24,7 @@ In this basic example, if you needed to actually get the link itself, you could 
 const finder = require('markdown-finder')
 
 // Does the markdown string have at least one link?
-const link = finder(myMarkdown).get.link()
+const link = finder(myMarkdown).get.links()
 // { match, text, url }
 console.log(`I found a link! It goes to ${link.url}!`)
 ```
@@ -35,9 +35,7 @@ There are two tracks: `finder().has` and `finder().get`. The former will always 
 
 | Method | Description | Get returns |
 | ------ | ----------- | ------- |
-| `image` | Matches markdown images | `{ match, text, url }`
 | `images` | Returns an array of images | `[{ match, text, url }]` |
-| `link` | Matches markdown links. **Note**: it will not match images. | `{ match, text, url }` |
 | `links` | Returns an array of links | `[{ match, text, url }]` |
 
 ### Using callback validators
@@ -46,6 +44,6 @@ Each method takes a callback argument. This is where you can run your own valida
 
 ```js
 const markdown = 'Check out [my website](https://my-website.com)!'
-const link = finder(markdown)
-// link: { match: '[my website](https://my-website.com)', text: 'my website', url: 'https://my-website.com' }
+const links = finder(markdown).get.links()
+// links: [{ match: '[my website](https://my-website.com)', text: 'my website', url: 'https://my-website.com' }]
 ```
