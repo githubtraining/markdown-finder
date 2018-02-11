@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`MarkdownFinder bolds returns an array of bold text 1`] = `
+Array [
+  Object {
+    "match": "**this is some bold**",
+    "text": "this is some bold",
+  },
+  Object {
+    "match": "**this**",
+    "text": "this",
+  }
+]
+`;
+
 exports[`MarkdownFinder images returns an array of images 1`] = `
 Array [
   Object {

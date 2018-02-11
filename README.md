@@ -36,6 +36,7 @@ console.log(`I found a link! It goes to ${links[0].url}!`)
 | ------ | ----------- | ------- |
 | `images` | Returns an array of images | `[{ match, text, url }]` |
 | `links` | Returns an array of links | `[{ match, text, url }]` |
+| `bolds` | Returns an array of bolded text | `[{ match, text }]` |
 
 ### Using callback validators
 

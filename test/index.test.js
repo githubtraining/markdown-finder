@@ -31,4 +31,16 @@ describe('MarkdownFinder', () => {
       expect(finder(md).links().length).toBe(1)
     })
   })
+
+  describe('bolds', () => {
+    it('returns an array of bold text', () => {
+      const md = '**this is some bold** and so is **this**'
+      expect(finder(md).bolds()).toMatchSnapshot()
+    })
+
+    it('returns an empty array if the markdown does not contain any bold text', () => {
+      const md = 'This is has no bold text'
+      expect(finder(md).bolds()).toEqual([])
+    })
+  })
 })
