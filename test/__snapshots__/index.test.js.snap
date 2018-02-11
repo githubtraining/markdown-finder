@@ -13,6 +13,19 @@ Array [
 ]
 `;
 
+exports[`MarkdownFinder code returns an array of code text 1`] = `
+Array [
+  Object {
+    "match": "\`this is some code\`",
+    "text": "this is some code",
+  },
+  Object {
+    "match": "\`this\`",
+    "text": "this",
+  },
+]
+`;
+
 exports[`MarkdownFinder images returns an array of images 1`] = `
 Array [
   Object {

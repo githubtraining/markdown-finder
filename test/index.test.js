@@ -55,4 +55,16 @@ describe('MarkdownFinder', () => {
       expect(finder(md).italics()).toEqual([])
     })
   })
+
+  describe('code', () => {
+    it('returns an array of code text', () => {
+      const md = '`this is some code` and so is `this`'
+      expect(finder(md).code()).toMatchSnapshot()
+    })
+
+    it('returns an empty array if the markdown does not contain any code text', () => {
+      const md = 'This is has no code text'
+      expect(finder(md).code()).toEqual([])
+    })
+  })
 })
