@@ -29,11 +29,13 @@ Array [
 exports[`MarkdownFinder codeBlock returns an array of codeblocks 1`] = `
 Array [
   Object {
+    "language": "js",
     "match": "\`\`\`js
 function code () {}
-\`\`\`",
+\`\`\`
+
+",
     "text": "function code () {}",
-    "language": "js",
   },
 ]
 `;
