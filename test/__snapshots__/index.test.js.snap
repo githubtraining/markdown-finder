@@ -26,6 +26,18 @@ Array [
 ]
 `;
 
+exports[`MarkdownFinder codeBlock returns an array of codeblocks 1`] = `
+Array [
+  Object {
+    "match": "\`\`\`js
+function code () {}
+\`\`\`",
+    "text": "function code () {}",
+    "language": "js",
+  },
+]
+`;
+
 exports[`MarkdownFinder images returns an array of images 1`] = `
 Array [
   Object {

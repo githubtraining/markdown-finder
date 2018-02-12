@@ -67,4 +67,16 @@ describe('MarkdownFinder', () => {
       expect(finder(md).code()).toEqual([])
     })
   })
+
+  describe.only('codeBlock', () => {
+    it('returns an array of codeblocks', () => {
+      const md = '```js\nfunction code () {}\n```\n\nand so is not'
+      expect(finder(md).code()).toMatchSnapshot()
+    })
+
+    it('returns an empty array if the markdown does not contain any codeblocks', () => {
+      const md = 'This is has no code blocks'
+      expect(finder(md).code()).toEqual([])
+    })
+  })
 })

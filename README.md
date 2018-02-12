@@ -39,6 +39,7 @@ console.log(`I found a link! It goes to ${links[0].url}!`)
 | `bolds` | Returns an array of bolded text | `[{ match, text }]` |
 | `italics` | Returns an array of italic text | `[{ match, text }]` |
 | `code` | Returns an array of code text | `[{ match, text }]` |
+| `codeBlock` | Returns an array of code blocks | `[{ match, text, language }]` |
 
 ### Using callback validators
 
